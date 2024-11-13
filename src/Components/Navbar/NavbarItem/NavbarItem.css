@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Play:wght@400;700&display=swap');
+
+* {
+    margin: auto;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-image: url("./assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    color: #f1f1f1;
+}
+
+.container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.box:hover {
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.9);
+}
+.box img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #f1f1f1;
+}
+  
+.box h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+  
+.box p {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    height: 80px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+}
+  
+.box a {
+    padding: 18px;
+    background-color: #00bcd4;
+    border-radius: 5px;
+    color: #f1f1f1;
+    text-decoration: none;
+    align-self: flex-start;
+}
+  
+.box a:hover {
+    text-decoration: underline;
+    box-shadow: 2px 2px 7px #00bcd4;
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    color: #121212;
+    border-radius: 13px;
+}

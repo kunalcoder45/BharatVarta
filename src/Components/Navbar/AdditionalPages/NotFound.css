@@ -1,0 +1,160 @@
+Base styles
+.error-container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  /* Stars animation */
+  .stars-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .star {
+    position: absolute;
+    color: rgba(254, 240, 138, 0.4);
+    font-size: 1.5rem;
+  }
+  
+  .star-1 {
+    animation: pulse 2s infinite;
+    top: 15%;
+    left: 20%;
+  }
+  
+  .star-2 {
+    right: 20%;
+    top: 25%;
+    animation: pulse 2s infinite 0.3s;
+  }
+  
+  .star-3 {
+    left: 30%;
+    bottom: 25%;
+    animation: pulse 2s infinite 0.5s;
+  }
+  
+  /* Content styles */
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 9%;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+  
+  /* Icons */
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .icon {
+    font-size: 2rem;
+  }
+  
+  .icon.satellite {
+    color: #93c5fd;
+    animation: bounce 2s infinite;
+  }
+  
+  .icon.rocket {
+    color: #d8b4fe;
+    animation: pulse 2s infinite;
+  }
+  
+  /* Typography */
+  .title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e9d5ff;
+    margin: 0 0 1rem;
+  }
+  
+  .message {
+    color: #d1d5db;
+    margin: 0 0 2rem;
+  }
+  
+  /* Button */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #9333ea;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #7e22ce;
+  }
+  
+  /* Error code */
+  .error-code {
+    margin-top: 2rem;
+    color: #9ca3af;
+    font-size: 0.875rem;
+  }
+  
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.5rem);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .title {
+      font-size: 4rem;
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+    }
+    .card {
+      margin: 10%;
+    }
+  }
