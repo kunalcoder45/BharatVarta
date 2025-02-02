@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import Logo from '../../../public/logo.png'
 import './Footer.css'
 
 const Footer = () => {
@@ -10,7 +11,7 @@ const Footer = () => {
           <h5>We Create Posibilities for connected World.</h5>
           <h3>Be Bold !</h3>
           <h3>Be Ready !</h3>
-          <a href="/"><img src="public\logo.png" alt="logo" /></a>
+          <a href="/"><img src={Logo} alt="Logo" /></a>
         </div>
         <div className="foot-box">
           <h3>Explore</h3>
