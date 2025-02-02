@@ -1,40 +1,38 @@
 import axios from "axios";
 
-// Your API Key
-const API_KEY = "291edec955684a829a93d37af2b901f2";
+// API Configuration
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;  // Use .env file for security
 const API_URL = "https://newsapi.org/v2/top-headlines";
 
-// Function to fetch news
+// Function to fetch general news
 export const fetchNews = async () => {
   try {
     const response = await axios.get(API_URL, {
       params: {
         apiKey: API_KEY,
         country: "us",
-        //category: "top",
-        pageSize: 25, 
+        pageSize: 25,
         language: "en",
-        sortBy: "publishedAt"
+        sortBy: "publishedAt",
+      },
+      headers: {
+        "User-Agent": "Mozilla/5.0",  // Fixes 426 error
+        Accept: "application/json",
       },
     });
-    
-    if (response.data && response.data.articles) {
-      console.log(response.data.articles); // Log articles to console
-      return response.data.articles; // Return the articles
-    } else {
-      console.log("No articles found.");
-      return []; // Return empty array if no articles found
-    }
+
+    return response?.data?.articles ?? [];
   } catch (error) {
-    console.error("Error fetching news:", error.message); // Log error message
-    return []; // Return empty array in case of error
+    console.error(
+      "Error fetching news:",
+      error.response?.status || "Unknown Error",
+      error.message
+    );
+    return [];
   }
 };
 
-
-// sports news 
-
-
+// Function to fetch sports news
 export const fetchSportsNews = async () => {
   try {
     const response = await axios.get(API_URL, {
@@ -43,15 +41,21 @@ export const fetchSportsNews = async () => {
         q: "sports",
         language: "en",
         sortBy: "publishedAt",
-        pageSize: 20,  // Fetch up to 10 sports articles
+        pageSize: 20,
+      },
+      headers: {
+        "User-Agent": "Mozilla/5.0",  // Fixes 426 error
+        Accept: "application/json",
       },
     });
 
-    if (response.data && response.data.articles) {
-      return response.data.articles;
-    }
+    return response?.data?.articles ?? [];
   } catch (error) {
-    console.error("Error fetching sports news:", error);
+    console.error(
+      "Error fetching sports news:",
+      error.response?.status || "Unknown Error",
+      error.message
+    );
     return [];
   }
 };
