@@ -1,4 +1,4 @@
-import axios from "axios";
+import.meta.env = {"BASE_URL": "/", "DEV": true, "MODE": "development", "PROD": false, "SSR": false, "VITE_NEWS_API_KEY": "291edec955684a829a93d37af2b901f2"};import axios from "/node_modules/.vite/deps/axios.js?v=9e980dbd";
 
 // API Configuration
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;  // Use .env file for security
