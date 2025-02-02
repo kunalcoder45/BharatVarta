@@ -2,7 +2,7 @@ import axios from "axios";
 
 // API Configuration
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;  // Use .env file for security
-const API_URL = "https://newsapi.org/v2/top-headlines";
+const API_URL = "/api/v2/top-headlines"; // Use the '/api' proxy path
 
 // Function to fetch general news
 export const fetchNews = async () => {

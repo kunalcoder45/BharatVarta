@@ -7,4 +7,13 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: true,
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://newsapi.org', // Target the actual API URL
+        changeOrigin: true, // Needed for virtual hosted sites
+        rewrite: (path) => path.replace(/^\/api/, ''), // Rewrite the URL to remove '/api' prefix
+      },
+    },
+  },
 });
