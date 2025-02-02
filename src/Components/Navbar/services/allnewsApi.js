@@ -2,7 +2,7 @@ import axios from "axios";
 
 // API Configuration
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;  // Use .env file for security
-const API_URL = "/api/news";  // Use the '/api' proxy path for Newsdata.io API
+const API_URL = "https://newsapi.org/v2/top-headlines";
 
 // Function to fetch general news
 export const fetchNews = async () => {
@@ -16,7 +16,7 @@ export const fetchNews = async () => {
         sortBy: "publishedAt",
       },
       headers: {
-        "User-Agent": "Mozilla/5.0",  // Fixes 426 error if needed
+        "User-Agent": "Mozilla/5.0",  // Fixes 426 error
         Accept: "application/json",
       },
     });
@@ -44,7 +44,7 @@ export const fetchSportsNews = async () => {
         pageSize: 20,
       },
       headers: {
-        "User-Agent": "Mozilla/5.0",  // Fixes 426 error if needed
+        "User-Agent": "Mozilla/5.0",  // Fixes 426 error
         Accept: "application/json",
       },
     });
