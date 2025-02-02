@@ -8,7 +8,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const Business = () => {
   const [articles, setArticles] = useState([]);
-
+  
   useEffect(() => {
     AOS.init({
       duration: 1000,
