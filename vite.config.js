@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://newsapi.org', // Target the actual API URL
+        target: 'https://newsdata.io', // Target the actual API URL for Newsdata.io
         changeOrigin: true, // Needed for virtual hosted sites
         rewrite: (path) => path.replace(/^\/api/, ''), // Rewrite the URL to remove '/api' prefix
       },
